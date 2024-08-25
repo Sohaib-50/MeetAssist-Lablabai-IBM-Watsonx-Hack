@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,3 +10,129 @@ body {
 h1 {
     color: #333;
 }
+=======
+/* General Styles */
+:root {
+    /* cool blue */
+    --primary-color: #0052a3;
+
+    /* dull version of the blue */
+    --secondary-color: #0066cc;
+}
+body {
+    background-color: #f5f7fa;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.navbar {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.navbar li {
+    font-size: 1.2rem;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 3rem;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.primary-button {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.primary-button:hover {
+    background-color: #0052a3;
+    color: #e6e6e6;
+}
+
+.secondary-button {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.secondary-button:hover {
+    background-color: #e0e0e0;
+    color: #111;
+}
+
+/* Custom Input Styles */
+.custom-input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.custom-input:focus {
+    border-color: #0066cc;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.2);
+}
+
+
+.markdown-container {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+    padding: 2rem 3rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    min-height: 50vh;
+}
+
+.markdown-content * {
+    color: black;
+}
+
+.markdown-content p {
+    font-size: 1.3rem;
+}
+
+.markdown-content li {
+    font-size: 1.1rem;
+}
+
+.markdown-content h2 {
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#transcript_text {
+    padding: 0 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    color: #444;
+    overflow-y: scroll;
+    max-height: 50vh;
+}
+
+
+
+
+
+
+
+>>>>>>> 4dc9f61 (mvp)

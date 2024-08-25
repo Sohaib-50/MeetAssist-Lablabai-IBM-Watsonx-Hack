@@ -1,0 +1,114 @@
+Transcript:
+
+As we head into the final days of this presidential race, consider this story. Matt Futterman was ru... Glass. Don't forget to vote. God bless you, and God bless America. PRI, Public Radio International.
+
+
+
+Transcript is too large to summarize in one go. Splitting into 4 chunks.
+Summarizing chunk 1/4
+Here is a summary of the meeting transcript in bullet points:
+
+- The story of Matt Futterman's student government campaign in 1985 is shared, where he used a humorous slogan "Vote for Matt. He is good. He'll give you wood" and gave away free wood samples to win over the freshmen voters.
+
+- The campaign was successful, and Matt won the election, inspiring other candidates to use TV ads in their campaigns.
+
+- The discussion turns to the current presidential election, where candidates are trying to appeal to voters by showing their human side and sense of humor.
+
+- The program "This American Life" is introduced, which will feature three stories about parts of the election that don't fit into scripted soundbites.
+
+- The first story, "Fools Rush In," is about a multimillionaire named Geoffrey Fieger who helped swing the Michigan primary by creating negative ads attacking George W. Bush.
+
+- Fieger's ads were unorthodox and humorous, but also impeccably researched and empirically correct, unlike many other political ads.
+
+- Fieger and his team are described as "coffee outside of the cup," meaning they don't fit into traditional political categories and are willing to take risks and be unconventional.
+
+- The team is working on new ads, and the creative process is described, with Fieger and his team being careful to ensure that everything in the ads is true and accurate. 
+
+
+Summarizing chunk 2/4
+Here is a summary of the meeting transcript in bullet points:
+
+- The conversation revolves around Geoffrey Fieger, a lawyer and politician, who is known for his unscripted and humorous approach to politics.
+- Fieger is described as having fun while creating political ads, which is unusual in mainstream politics.
+- He believes that having fun is essential in politics and that it's what makes his ads effective.
+- Fieger's approach is compared to the old-fashioned American politics of calling the other side names, which is seen as a way to connect with voters.
+- The conversation also touches on the topic of education and the presidential candidates' stances on it, particularly in regards to testing and accountability.
+- The reality of education reform is explored through the example of North Carolina's ABC program, which has both positive and negative consequences.
+- Teachers in North Carolina express concerns about the emphasis on testing, which they feel has created a frenzy and diverted resources from actual teaching.
+- One teacher, Teresa Glenn, was suspended for speaking out against the End-of-Grade tests, highlighting the controversy surrounding the issue.
+
+Note: The summary focuses on the main points and themes discussed in the transcript, omitting some details and quotes to provide a concise overview. 
+
+
+Summarizing chunk 3/4
+Here is a summary of the meeting transcript in bullet points:
+
+- A teacher expresses frustration that 50-75% of classroom time is spent on test prep, and that a huge chunk of the school's budget is spent on test prep books, which is not effective in teaching students.
+
+- The teacher is depressed that they cannot get the novel sets they need for their students, while the Department of Public Instruction is handing out bonuses to teachers who have made gains in test scores.
+
+- The teacher believes that teaching students to answer multiple-choice questions is a low standard and that education should be about fostering a love of knowledge and the ability to pursue it.
+
+- The teacher visits Allenbrook Elementary, a school that has made remarkable gains in test scores, and finds that the principal credits the accountability program for the improvement.
+
+- However, the teacher notes that the problem at Allenbrook was not the teachers' ability, but rather the lack of staff, especially for students from poor neighborhoods who need extra support.
+
+- The teacher argues that the solution is not testing, but rather providing adequate resources, including staff, to support students.
+
+- Phil Kirk, Chairman of the North Carolina State Board of Education, agrees that teaching kids from poor backgrounds is harder and requires more resources, but believes that the accountability program has helped to get additional resources for low-performing schools.
+
+- A parent, Cathy Rouse, shares her experience of her son being held back in third grade due to not passing the EOGs, despite being a good student, and argues that holding kids back is damaging to their self-esteem and not an effective solution.
+
+- Teachers and educators express concerns that the tests are not an accurate measure of a student's abilities and that the emphasis on testing is unfair to children who may not be able to pass, regardless of their efforts.
+
+- The debate centers around the philosophy of teaching, with some believing that results should be demanded from students, while others prioritize nurturing and self-esteem.
+
+- The assembly at Jefferson Elementary School, a school that has done well on the EOGs, highlights the divide between these two philosophies, with administrators emphasizing the importance of student responsibility and teachers and students seeming to receive a different message. 
+
+
+Summarizing chunk 4/4
+Here is a concise summary of the meeting transcript in bullet points:
+
+- The speaker reflects on a school assembly where the principal praises the students and teachers, using nurturing language, which contrasts with the language of leadership and accountability emphasized in the current education system.
+
+- Teachers in the lounge express frustration with the emphasis on testing and high stakes, feeling that a balance between nurturing and accountability is needed, but unlikely to be achieved with the current political proposals.
+
+- The conversation shifts to the topic of nepotism, with a focus on the Bush family's history of leveraging their connections and wealth to gain power and influence.
+
+- Genealogist Gary Boyd Roberts explains how the Bush family's strategic moves and marriages helped them accumulate wealth and power over generations, while the speaker's family remained in one place and missed out on opportunities.
+
+- The Bush family's tradition of using their connections to get ahead is discussed, including George H.W. Bush's use of his father's connections to start an oil company and George W. Bush's reliance on family friends to bail him out of failed business ventures.
+
+- The speaker wonders if it would be beneficial to openly acknowledge and accept the role of nepotism in American society, rather than pretending it doesn't exist.
+
+- Adam Bellow, author of a book on nepotism, suggests that humility and hard work can help individuals who have benefited from nepotism feel more deserving of their success.
+
+- The program ends with a reflection on the Bush family's history of accumulating power and wealth, and the speaker's sense that it doesn't seem unfair, but rather a natural result of their strategic efforts over generations. 
+
+
+
+
+
+Final Summary:
+
+Summary in markdown format:
+         ------------------------
+        SUMMARY
+        ```
+        # Overview
+        The meeting transcript discusses the 2000 US presidential election, education reform, and nepotism, featuring stories about unconventional political ads, the impact of testing on education, and the Bush family's accumulation of power and wealth.
+
+        # Unconventional Politics
+        - Matt Futterman's humorous student government campaign in 1985 inspired other candidates to use TV ads.
+        - Geoffrey Fieger's unorthodox and humorous approach to politics is discussed, including his creation of negative ads attacking George W. Bush.
+
+        # Education Reform
+        - The conversation revolves around the presidential candidates' stances on education, particularly testing and accountability.
+        - Teachers express concerns about the emphasis on testing, which they feel has created a frenzy and diverted resources from actual teaching.
+        - The reality of education reform is explored through the example of North Carolina's ABC program, which has both positive and negative consequences.
+
+        # Nepotism
+        - The Bush family's history of leveraging their connections and wealth to gain power and influence is discussed.
+        - Genealogist Gary Boyd Roberts explains how the Bush family's strategic moves and marriages helped them accumulate wealth and power over generations.
+        - The speaker wonders if it would be beneficial to openly acknowledge and accept the role of nepotism in American society.
+        ```

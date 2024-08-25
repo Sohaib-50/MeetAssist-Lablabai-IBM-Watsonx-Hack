@@ -3,3 +3,8 @@ python-dotenv
 langchain
 langchain-community
 ibm-watsonx-ai
+<<<<<<< HEAD
+=======
+markdown
+tiktoken
+>>>>>>> 4dc9f61 (mvp)

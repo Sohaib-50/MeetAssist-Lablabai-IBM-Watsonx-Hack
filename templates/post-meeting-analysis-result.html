@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}Post-Meeting | MeetAssist{% endblock %}
+
+{% block content %}
+
+<div class="my-5">
+    <a href="/post-meeting" class="btn mb-4 ">Back</a>
+
+    <h2 class="mb-4 display-4"> {{ analysis_title | capitalize }} </h2>
+    <!-- <h2 class="mb-4 display-4">{{ analysis_type | capitalize }}</h2> -->
+
+    <div class="markdown-container">
+        <!-- Display the result in Markdown format. Assuming the result is safe to be rendered as HTML. -->
+        <div class="markdown-content">
+            {{ result | safe }} <!-- Render the result text safely as HTML -->
+        </div>
+    </div>
+
+
+    <h3 class="mt-5">Uploaded Transcript</h3>
+    <div class="mt-3 border p-3 markdown-container">
+        <p id="transcript_text" class="markdown-content body">{{ transcript | safe }}</p>
+    </div>
+
+</div>
+{% endblock %}

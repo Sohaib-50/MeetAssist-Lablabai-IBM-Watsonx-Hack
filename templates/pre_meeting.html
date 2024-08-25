@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}Pre-Meeting | MeetAssist{% endblock %}
+
+{% block content %}
+<div class="my-5">
+    <h2 class="mb-4 display-4">Pre-Meeting Features</h2>
+    <p class="lead"> Prepare for your meetings to get the most out of them. </p>
+
+    <hr>
+
+    <h3 class="mb-2 mt-4">Generate Agenda</h3>
+    <p class="lead text-muted">Create a structured agenda for your meeting.</p>
+
+    <form action="/pre-meeting-analysis-result" method="post">
+        <div class="mb-4">
+            <label for="meeting_topic" class="form-label">Meeting Topic</label>
+            <input type="text" class="form-control custom-input" id="meeting_topic" name="meeting_topic" required placeholder="What's the meeting about? E.g., Monthly product roadmap review">
+        </div>
+        <div class="mb-4">
+            <label for="meeting_background" class="form-label">Meeting Background</label>
+            <textarea class="form-control custom-input" id="meeting_background" name="meeting_background" rows="4" required placeholder="What is the context of the meeting? What are the key goals?"></textarea>
+        </div>
+        <div class="mb-4">
+            <label for="participants" class="form-label">Participants</label>
+            <input type="text" class="form-control custom-input" id="participants" name="meeting_participants" required placeholder="Who are the participants? E.g., CEO, product manager, sales team">
+        </div>
+        <button type="submit" class="btn btn-primary">Generate</button>
+    </form>
+</div>
+{% endblock %}

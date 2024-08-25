@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}Home | MeetAssist{% endblock %}
+
+{% block content %}
+<div class="text-center my-5">
+    <div class="jumbotron jumbotron-fluid bg-light py-5">
+        <h1 class="display-2 fw-bold">MeetAssist</h1>
+        <p class="lead"> Make your meetings more productive, organized, and insightful. </p>
+
+        <div class="row align-items-center text-start mt-5">
+            <!-- Pre-Meeting Features -->
+            <div class="col-lg-5 mb-5">
+                <h3 class="fw-bold">Pre-Meeting</h3>
+                <h5 class="text-muted">Perfect Your Meeting Preparation</h5>
+                <p></p>
+                <p class="lead">
+                    Set your future meetings up for success and get the most out of them with effective pre-meeting
+                    preparation.
+                </p> <a href="/pre-meeting" class="btn btn-lg btn-primary mt-3">Explore Pre-Meeting Features</a>
+            </div>
+
+            <!-- Vertical Divider -->
+            <div class="col-lg-2 d-none d-lg-block text-center">
+                <div class="vr" style="height: 250px; width: 1px; background-color: #bbb; margin: auto;"></div>
+            </div>
+
+            <!-- Post-Meeting Features -->
+            <div class="col-lg-5 mb-5">
+                <h3 class="fw-bold">Post-Meeting</h3>
+                <h5 class="text-muted ">Analyze and Improve Your Meetings</h5>
+                <p></p>
+                <p class="lead">
+                    Understand your meetings better and improve future ones with insightful post-meeting analysis.
+                </p> <a href="/post-meeting" class="btn btn-lg btn-secondary mt-3">Explore Post-Meeting Features</a>
+            </div>
+        </div>
+
+    </div>
+    {% endblock %}

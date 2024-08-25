@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}Post-Meeting | MeetAssist{% endblock %}
+
+{% block content %}
+
+<div class="my-5">
+    <a href="/pre-meeting" class="btn mb-4 ">Back</a>
+
+    <h2 class="mb-4 display-4"> Generated Agenda </h2>
+
+    <div class="markdown-container">
+        <!-- Display the result in Markdown format. Assuming the result is safe to be rendered as HTML. -->
+        <div class="markdown-content">
+            {{ result | safe }} <!-- Render the result text safely as HTML -->
+        </div>
+    </div>
+
+
+    <div class="mt-4">
+        <h3 class="mb-2">Meeting Details</h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b> Topic: </b> {{ meeting_topic }}</li>
+            <li class="list-group-item"><b>Background:</b> {{ meeting_background }}</li>
+            <li class="list-group-item"><b>Participants:</b> {{ meeting_participants }}</li>
+        </ul>
+    </div>  
+
+</div>
+{% endblock %}
