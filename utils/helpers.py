@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-def get_welcome_message():
-    return "Welcome to MeetAssist, your solution for efficient meetings!"
-=======
+
 import markdown
 from textwrap import dedent
 from utils.ai import MeetAssistAI
@@ -67,4 +64,3 @@ def post_meeting_analysis(transcript, analysis_type):
     print(f"HTML-ized result: {result}", flush=True)
 
     return result, analysis_title
->>>>>>> 4dc9f61 (mvp)

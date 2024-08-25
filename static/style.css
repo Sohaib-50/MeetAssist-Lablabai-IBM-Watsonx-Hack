@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: #f4f4f4;
-}
 
-h1 {
-    color: #333;
-}
-=======
 /* General Styles */
 :root {
     /* cool blue */
@@ -129,10 +117,3 @@ h1, h2 {
     max-height: 50vh;
 }
 
-
-
-
-
-
-
->>>>>>> 4dc9f61 (mvp)

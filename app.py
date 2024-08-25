@@ -1,22 +1,12 @@
-<<<<<<< HEAD
-from flask import Flask, render_template
-from utils.helpers import get_welcome_message
-=======
+
 from flask import Flask, render_template, request
 from utils.helpers import get_welcome_message, pre_meeting_analysis, post_meeting_analysis
->>>>>>> 4dc9f61 (mvp)
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
     welcome_message = get_welcome_message()
-<<<<<<< HEAD
-    return render_template('index.html', message=welcome_message)
-
-if __name__ == '__main__':
-    app.run(debug=True)
-=======
     return render_template('home.html', message=welcome_message)
 
 
@@ -60,5 +50,3 @@ def post_meeting_analysis_result():
     
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000, debug=True)
-
->>>>>>> 4dc9f61 (mvp)
