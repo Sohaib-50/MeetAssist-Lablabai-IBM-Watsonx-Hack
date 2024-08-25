@@ -602,7 +602,7 @@ class MeetAssistAI:
             improvement_suggestions = []
             for i, chunk in enumerate(transcript_chunks):
                 print(f"Suggesting improvements from chunk {i + 1}/{len(transcript_chunks)}", flush=True)
-                chunk_improvement_suggestions = MeetAssistAI._suggest_impro
+                chunk_improvement_suggestions = MeetAssistAI._suggest_improvements(chunk, is_transcript=True)
                 print(chunk_improvement_suggestions, "\n\n", flush=True)
                 improvement_suggestions.append(f"Improvement suggestions from part {i + 1}/{len(transcript_chunks)} of the meeting transcript:\n{chunk_improvement_suggestions}")
 
