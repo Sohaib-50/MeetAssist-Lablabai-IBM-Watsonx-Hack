@@ -3,7 +3,6 @@
 {% block title %}Post-Meeting | MeetAssist{% endblock %}
 
 {% block content %}
-
 <div class="my-5">
     <h2 class="mb-4 display-4">Post-Meeting Features</h2>
     <p class="lead">Understand your meetings better and improve future ones.</p>
@@ -43,57 +42,92 @@
             </div>
         </div>
     </div>
-    
 
 
 
-
+    <!-- Form for Analysis -->
     <form action="/post-meeting-analysis-result" method="post" enctype="multipart/form-data">
+        <!-- Upload Meeting Transcript -->
         <div class="mb-4">
             <label for="meeting_transcript" class="form-label">Upload Meeting Transcript</label>
-            <input type="file" class="form-control custom-input" id="meeting_transcript" name="meeting_transcript" required>
+            <input type="file" class="form-control custom-input" id="meeting_transcript" name="meeting_transcript">
         </div>
 
+        <!-- Dropdown for Sample Files -->
+        <div class="mb-4">
+            <label for="sample_file" class="form-label">Or Choose a Sample Transcript</label>
+            <select class="form-control custom-input" id="sample_file" name="sample_file">
+                <option value="" selected>-- Select a Sample File --</option>
+                {% for file, content in transcript_files.items() %}
+                <option value="{{ file }}">{{ file }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Analysis Type Dropdown -->
         <div class="mb-4">
             <label for="analysis_type" class="form-label">Select Analysis</label>
-            <div class="dropdown">
-                <select class="form-select custom-select" id="analysis_type" name="analysis_type" required>
-                    <option value="summary">Summarize</option>
-                    <option value="action_items">Extract Action Items</option>
-                    <option value="sentiment_analysis">Analyze Participants' Sentiments</option>
-                    <option value="productivity_analysis">Analyze Productivity</option>
-                    <option value="improvement_suggestions">Generate Suggestions for Improvements</option>
-                </select>
-            </div>
+            <select class="form-select custom-select" id="analysis_type" name="analysis_type" required>
+                <option value="summary">Summarize</option>
+                <option value="action_items">Extract Action Items</option>
+                <option value="sentiment_analysis">Analyze Participants' Sentiments</option>
+                <option value="productivity_analysis">Analyze Productivity</option>
+                <option value="improvement_suggestions">Generate Suggestions for Improvements</option>
+            </select>
         </div>
 
+        <!-- Submit Button -->
         <button type="submit" class="btn btn-primary">Analyze</button>
     </form>
 
+    <!-- Display Selected Transcript -->
     <h3 class="mt-5">Uploaded Transcript</h3>
     <div class="mt-3 border p-3">
         <p id="transcript_text">Your uploaded transcript will be displayed here...</p>
     </div>
 </div>
 
+<!-- JavaScript to Handle Transcript Display -->
 <script>
-    document.getElementById('meeting_transcript').addEventListener('change', function(event) {
+    // Get references to elements
+    const fileInput = document.getElementById('meeting_transcript');
+    const dropdown = document.getElementById('sample_file');
+    const transcriptText = document.getElementById('transcript_text');
+    
+    // Store the transcript files from the backend
+    const transcriptFiles = {{ transcript_files | tojson | safe }};
+
+    // Handle file upload change event
+    fileInput.addEventListener('change', function (event) {
         const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
-            reader.onload = function(e) {
-                let transcript = e.target.result;
+            reader.onload = function (e) {
+                let transcript = e.target.result.trim().replace(/^['"]|['"]$/g, '');
+                transcriptText.textContent = transcript;
 
-                // Remove trailing and leading whitespaces and quotes
-                transcript = transcript.trim().replace(/^['"]|['"]$/g, '');
-                
-                console.log(transcript);
-                // Set the sanitized text content
-                document.getElementById('transcript_text').textContent = transcript;
+                // Reset dropdown selection when a file is uploaded
+                dropdown.selectedIndex = 0;
             };
             reader.readAsText(file);
+        } else {
+            transcriptText.textContent = 'Your uploaded transcript will be displayed here...';
+        }
+    });
+
+    // Handle dropdown change event
+    dropdown.addEventListener('change', function () {
+        const selectedFile = dropdown.value;
+        if (selectedFile) {
+            // Display the selected transcript content
+            transcriptText.textContent = transcriptFiles[selectedFile];
+
+            // Clear file input if a dropdown option is chosen
+            fileInput.value = '';
+        } else {
+            // Reset the transcript text if default option is selected
+            transcriptText.textContent = 'Your uploaded transcript will be displayed here...';
         }
     });
 </script>
-
 {% endblock %}
