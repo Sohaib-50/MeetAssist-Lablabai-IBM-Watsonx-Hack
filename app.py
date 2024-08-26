@@ -20,16 +20,18 @@ def pre_meeting():
 @app.route('/post-meeting')
 def post_meeting():
 
+    sample_transcript_files = [
+        'QMSum-dataset-ES2006a.json.txt',
+        'QMSum-dataset-TS3010a.json.txt',
+        'QMSum-dataset-IS1006a.json.txt',
+        'QMSum-dataset-TS3010d.json.txt'
+    ]
     transcript_files = {}
-    for filename in os.listdir('Transcripts'):
-        if filename.endswith('.txt') and filename.startswith('QMSum'):
-            with open(f'Transcripts/{filename}', 'r') as file:
+    for filename in sample_transcript_files:
+        file_path = f'Transcripts/{filename}'
+        if os.path.isfile(file_path):  # Check if the file exists
+            with open(file_path, 'r') as file:
                 transcript_files[filename] = file.read()
-
-    # get 5 random transcript files
-    # transcript_files = dict(random.sample(transcript_files.items(), 5))
-    transcript_files = dict(random.sample(list(transcript_files.items()), 5))
-
 
     return render_template('post_meeting.html', transcript_files=transcript_files)
 
