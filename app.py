@@ -54,7 +54,6 @@ def pre_meeting_analysis_result():
 def post_meeting_analysis_result():
 
     # get post variables (meeting transcript text file and analysis_type)
-    # transcript_file = request.files['meeting_transcript']
     transcript_file = request.files.get('meeting_transcript')
     sample_file_name = request.form.get('sample_file')
     analysis_type = request.form['analysis_type']

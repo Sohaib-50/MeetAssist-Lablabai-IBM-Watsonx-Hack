@@ -1,10 +1,8 @@
 import os
 import json
-from time import time
 
-import requests
 from dotenv import load_dotenv
-from ibm_watsonx_ai import APIClient, Credentials
+from ibm_watsonx_ai import Credentials
 from ibm_watsonx_ai.foundation_models import Model
 from ibm_watsonx_ai.foundation_models.utils.enums import ModelTypes
 from ibm_watsonx_ai.metanames import GenTextParamsMetaNames as GenParams
@@ -13,49 +11,9 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 load_dotenv()
 
 ibm_api_key = os.getenv("IBM_API_KEY")
-ibm_username = os.getenv("IBM_USERNAME")
-ibm_password = os.getenv("IBM_PASSWORD")
 ibm_project_id = os.getenv("IBM_PROJECT_ID")
 
-def get_ibm_access_token():
-
-    # check if expired, if not return existing value
-    expiration = os.getenv("IBM_ACCESS_TOKEN_EXPIRATION")
-    if expiration is not None:
-        expiration = int(expiration)
-        if time() < expiration:
-            return os.getenv("IBM_ACCESS_TOKEN")
-        
-    # Get new access token
-    url = 'https://iam.cloud.ibm.com/identity/token'
-    payload = {
-        'grant_type': 'urn:ibm:params:oauth:grant-type:apikey',
-        'apikey': ibm_api_key
-    }
-    headers = {
-        'Content-Type': 'application/x-www-form-urlencoded'
-    }
-
-    response = requests.post(url, data=payload, headers=headers)
-
-    if response.status_code != 200:
-        print("Failed to get token.")
-        print(response.text)
-        access_token = None
-    else:
-        data = response.json()
-        access_token = data.get('access_token')
-        expiration = data.get('expiration')
-
-        os.environ["IBM_ACCESS_TOKEN"] = access_token
-        os.environ["IBM_ACCESS_TOKEN_EXPIRATION"] = str(expiration)
-
-    return access_token
-
-
 def get_model():
-
-    access_token = get_ibm_access_token()
 
     model = Model(
         model_id=ModelTypes.LLAMA_3_70B_INSTRUCT,
@@ -337,12 +295,6 @@ class MeetAssistAI:
         print(f"Action items:\n{action_items}", flush=True)
         return action_items
     
-    
-    # participants' Sentiment Analysis
-    # Plan:
-    # - A summary of the sentiment of the meeting, i.e. how the participants felt during the meeting, eg. happy, sad, angry, discontented etc.
-    # - a single string describing the sentiment(s) of the meeting. It could be that overall everyone had one sentiment or some had different. A short summary of the sentiment of the meeting in paragraph form.
-
     @staticmethod
     def _analyze_participants_sentiment(text, is_transcript=False):
 
@@ -413,20 +365,7 @@ class MeetAssistAI:
         print(f"Sentiment analysis:\n{sentiment_analysis}", flush=True)
 
         return sentiment_analysis
-    
 
-    # Meeting Productivity Analysis
-    # - A summary of the productivity of the meeting, i.e. how productive the meeting was, eg. very productive, somewhat productive, not productive, etc.
-    # - a single string describing the productivity of the meeting in markdown format.
-    # - template:
-    # ```markdown
-    # ## Overall Evaluation:
-    # Either one of 'Very Productive', 'Somewhat Productive', 'Not Productive'
-    # 
-    # ## Key Factors:
-    # * <Key factor 1>
-    # * <Key factor 2>
-    # ...
 
     @staticmethod
     def _analyze_meeting_productivity(text, is_transcript=False):
@@ -512,14 +451,6 @@ class MeetAssistAI:
 
         return productivity_analysis
     
-    # Improvement Suggestions
-    # - Suggestions for how to improve the meeting in the future.
-    # - each suggestion should address a problem. The problem should be stated in one word or a phrase or fewest words possible. And then the suggestion should be stated in one or few sentences. A problem may have multiple suggestions.
-    # - template:
-    # ```markdown
-    # #### 1.
-    # **Problem: ** <Problem 1>
-    # **Suggestions: ** <Suggestions>
 
     @staticmethod
     def _suggest_improvements(text, is_transcript=False):
