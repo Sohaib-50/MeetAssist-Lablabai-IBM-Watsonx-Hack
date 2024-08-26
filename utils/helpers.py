@@ -8,7 +8,15 @@ def get_welcome_message():
 
 
 def pre_meeting_analysis(meeting_topic, meeting_background, meeting_participants):
-    result = MeetAssistAI.generate_agenda(meeting_topic, meeting_background, meeting_participants)
+    try:
+        result = MeetAssistAI.generate_agenda(meeting_topic, meeting_background, meeting_participants)
+    except:
+        # error message markdown result
+        result = """
+        ### Oops!
+        An error occurred while generating the meeting agenda, sorry!
+        Please go back and try once more.
+        """
     result = markdown.markdown(dedent(result.strip()), extensions=['fenced_code'])
 
     return result
@@ -16,21 +24,30 @@ def pre_meeting_analysis(meeting_topic, meeting_background, meeting_participants
 
 def post_meeting_analysis(transcript, analysis_type):
 
-    if analysis_type == "summary":
-        result = MeetAssistAI.summarize_meeting_transcript(transcript)
-        analysis_title = "Meeting Summary"
-    elif analysis_type == "action_items":
-        result = MeetAssistAI.extract_action_items(transcript)
-        analysis_title = "Action Items"
-    elif analysis_type == "sentiment_analysis":
-        result = MeetAssistAI.analyze_participants_sentiment(transcript)
-        analysis_title = "Participants' Sentiment Analysis"
-    elif analysis_type == "productivity_analysis":
-        result = MeetAssistAI.analyze_meeting_productivity(transcript)
-        analysis_title = "Productivity Analysis"
-    elif analysis_type == "improvement_suggestions":
-        result = MeetAssistAI.suggest_improvements(transcript)
-        analysis_title = "Improvement Suggestions"
+    try:
+        if analysis_type == "summary":
+            analysis_title = "Meeting Summary"
+            result = MeetAssistAI.summarize_meeting_transcript(transcript)
+        elif analysis_type == "action_items":
+            analysis_title = "Action Items"
+            result = MeetAssistAI.extract_action_items(transcript)
+        elif analysis_type == "sentiment_analysis":
+            analysis_title = "Participants' Sentiment Analysis"
+            result = MeetAssistAI.analyze_participants_sentiment(transcript)
+        elif analysis_type == "productivity_analysis":
+            analysis_title = "Productivity Analysis"
+            result = MeetAssistAI.analyze_meeting_productivity(transcript)
+        elif analysis_type == "improvement_suggestions":
+            analysis_title = "Improvement Suggestions"
+            result = MeetAssistAI.suggest_improvements(transcript)
+    except:
+        # error message markdown result
+        result = """
+        ### Oops!
+        An error occurred while generating the analysis, sorry!
+        Please go back and try once more.
+        """
+    
 
     # # mock response for testing
     # return """<p><strong>Overview:</strong> The meeting discusses the design of a remote control for a television set, covering its functionality, usability, and market requirements.</p>
